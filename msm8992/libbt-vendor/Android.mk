@@ -20,7 +20,7 @@ ifeq ($(BOARD_HAVE_BLUETOOTH_QCOM),true)
 
 include $(CLEAR_VARS)
 
-BDROID_DIR:= system/bt
+BDROID_DIR:= packages/modules/Bluetooth/system
 
 LOCAL_SRC_FILES := \
         src/bt_vendor_qcom.c \
@@ -66,6 +66,9 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_CFLAGS += -Wno-error
 LOCAL_MODULE := libbt-vendor
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-Apache-2.0 SPDX-license-identifier-BSD legacy_not_a_contribution
+LOCAL_LICENSE_CONDITIONS := by_exception_only not_allowed notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/NOTICE
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_OWNER := qcom
