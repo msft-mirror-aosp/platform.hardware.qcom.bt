@@ -45,7 +45,7 @@ endif
 LOCAL_C_INCLUDES += \
         $(LOCAL_PATH)/include \
         external/bluetooth/bluedroid/hci/include \
-        system/bt/hci/include \
+        packages/modules/Bluetooth/system/hci/include \
         $(TARGET_OUT_HEADERS)/bt/hci_qcomm_init
 
 ifeq ($(BOARD_HAS_QCA_BT_AR3002), true)
@@ -64,6 +64,9 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_CFLAGS += -Wno-error
 LOCAL_MODULE := libbt-vendor
+LOCAL_LICENSE_KINDS := SPDX-license-identifier-Apache-2.0 SPDX-license-identifier-BSD legacy_not_a_contribution
+LOCAL_LICENSE_CONDITIONS := by_exception_only not_allowed notice
+LOCAL_NOTICE_FILE := $(LOCAL_PATH)/NOTICE
 #LOCAL_CLANG := false
 LOCAL_CXX_STL := none
 LOCAL_MODULE_TAGS := optional
